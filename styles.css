@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.calculator {
+  border: 1px solid black;
+  margin: 0 auto;
+  padding: 25px;
+  width: 300px;
+}
+
+.controls-edit {
+  display: flex;
+  gap: 16px;
+}
+
+.clear,
+.delete {
+  flex-grow: 1;
+}
