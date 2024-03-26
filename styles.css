@@ -13,7 +13,7 @@ body {
 
 .calculator {
   border: 1px solid black;
-  height: 40vh;
+  height: 350px;
   margin: 0 auto;
   width: 300px;
 }

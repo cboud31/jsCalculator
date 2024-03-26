@@ -1,24 +1,35 @@
 let input1 = 1;
 let input2 = 3;
 let operator = "+";
+let result = 0;
 
-const add = (num1, num2) => num1 + num2;
+// [] Show number(s) in main display
 
-const subtract = (num1, num2) => num1 - num2;
+// Get the display DOM element
+// When we click on a number, set display value = button value
+const display = document.querySelector(".display-main");
+// display.textContent = result;
+const numberButtons = document.querySelectorAll(".number");
+numberButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    if (display.textContent == 0) {
+      display.textContent = button.value;
+    } else {
+      display.textContent += button.value;
+    }
+  });
+});
 
-const multiply = (num1, num2) => num1 * num2;
-
-const divide = (num1, num2) => num1 / num2;
-
+// [] Run operate() on-click '='
 function operate(num1, operator, num2) {
   switch (operator) {
     case "+":
-      return add(num1, num2);
+      return num1 + num2;
     case "-":
-      return subtract(num1, num2);
+      return num1 - num2;
     case "*":
-      return multiply(num1, num2);
+      return num1 * num2;
     case "/":
-      return divide(num1, num2);
+      return num1 / num2;
   }
 }
