@@ -4,6 +4,8 @@ let operator = "+";
 let result = 0;
 let mathArray = [];
 
+const equalsBtn = document.querySelector(".equals");
+
 // [] Show number(s) in main display
 
 // Get the display DOM element
@@ -23,7 +25,12 @@ numberButtons.forEach((button) => {
     }
     // if mathArray.length > 2
     if (mathArray.length === 2) {
-      display.textContent = button.value;
+      if (display.textContent.length >= 1) {
+        // display.textContent += button.value;
+      } else {
+        display.textContent = button.value;
+        console.log(input1);
+      }
       //   if (display.textContent.length < 1) {
       //     // console.log("inside textContent.length");
       //     display.textContent = button.value;
@@ -40,13 +47,20 @@ const operatorBtns = document.querySelectorAll(".operate");
 // console.log(operatorBtns);
 operatorBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
+    if (mathArray.length === 2) {
+      input2 = parseInt(display.textContent);
+      mathArray.push(input2);
+      console.log(mathArray);
+      return;
+    }
+
     console.log(input1);
     mathArray.push(parseInt(input1));
     operator = btn.value;
     mathArray.push(operator);
     console.log(mathArray);
     // Store the first input, store the operator, reset the display value.
-    display.textContent = "";
+    // display.textContent = "";
   });
 });
 
@@ -64,3 +78,15 @@ function operate([num1, operator, num2]) {
       return num1 / num2;
   }
 }
+
+equalsBtn.addEventListener("click", () => {
+  if (mathArray.length === 2) {
+    input2 = parseInt(display.textContent);
+    mathArray.push(input2);
+    console.log(mathArray);
+    let result = operate(mathArray);
+    console.log(result);
+    display.textContent = result;
+    // return;
+  }
+});
