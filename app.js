@@ -23,21 +23,13 @@ numberButtons.forEach((button) => {
       display.textContent += button.value;
       input1 = display.textContent;
     }
-    // if mathArray.length > 2
+
     if (mathArray.length === 2) {
       if (display.textContent.length >= 1) {
-        // display.textContent += button.value;
       } else {
         display.textContent = button.value;
         console.log(input1);
       }
-      //   if (display.textContent.length < 1) {
-      //     // console.log("inside textContent.length");
-      //     display.textContent = button.value;
-      //   } else {
-      //     display.textContent += button.value;
-      //   }
-      //   console.log(display.textContent.length);
     }
   });
 });
@@ -60,7 +52,8 @@ operatorBtns.forEach((btn) => {
     mathArray.push(operator);
     console.log(mathArray);
     // Store the first input, store the operator, reset the display value.
-    // display.textContent = "";
+    // display.textContent = input1;
+    display.textContent = "";
   });
 });
 
