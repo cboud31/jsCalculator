@@ -11,23 +11,28 @@ body {
   width: 100vw;
 }
 
+button {
+  border: none;
+}
+
 .calculator {
-  border: 1px solid black;
-  height: 350px;
+  height: auto;
   margin: 0 auto;
   width: 300px;
 }
 
 .wrapper {
+  background: #505050;
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
   height: inherit;
   justify-content: space-between;
-  padding: 25px;
+  padding: 12px;
 }
 
 .display {
-  border: 1px solid black;
+  background-color: #d4d4d2;
   display: flex;
   flex-direction: column;
   padding: 8px;
@@ -52,6 +57,11 @@ body {
   display: grid;
   gap: 10px;
   grid-template-columns: repeat(4, 1fr);
+}
+
+.operate,
+.equals {
+  background-color: #ff9500;
 }
 
 .clear,
