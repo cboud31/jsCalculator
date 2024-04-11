@@ -13,6 +13,7 @@ body {
 
 button {
   border: none;
+  color: #d4d4d2;
 }
 
 .calculator {
@@ -39,6 +40,8 @@ button {
 }
 
 .display-main {
+  font-family: monospace;
+  font-size: 56px;
   height: 60px;
   text-align: end;
 }
@@ -60,14 +63,22 @@ button {
 }
 
 .operate,
-.equals {
+.equals,
+.clear {
   background-color: #ff9500;
+  color: #1c1c1c;
 }
 
 .clear,
 .delete {
   flex-grow: 1;
   padding: 6.5px 0;
+}
+
+.number,
+.delete {
+  background-color: #1c1c1c;
+  color: #d4d4d2;
 }
 
 #zero {
