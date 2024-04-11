@@ -84,3 +84,7 @@ button {
 #zero {
   grid-column: -5 / -3;
 }
+
+.highlight {
+  border: 1px solid #d4d4d2;
+}

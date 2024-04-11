@@ -38,6 +38,10 @@ const clearDisplay = () => {
   display.textContent = result;
 };
 
+const resetBtnStyles = () => {
+  operatorBtns.forEach((btn) => btn.classList.remove("highlight"));
+};
+
 numberBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
     if (display.textContent.length === 9) {
@@ -68,6 +72,7 @@ operatorBtns.forEach((btn) => {
     mathArray.push(parseInt(input1), operator);
     console.log(mathArray);
     // [] Highlight style of pressed button
+    btn.classList.add("highlight");
   });
 });
 
@@ -83,6 +88,7 @@ equalsBtn.addEventListener("click", () => {
     input1 = result;
     input2 = null;
     mathArray = [];
+    resetBtnStyles();
   }
 });
 
